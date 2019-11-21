@@ -30,7 +30,9 @@ public class StreamUtils {
         if (CollectionUtils.isEmpty(collection)) {
             return Lists.newArrayList();
         }
-        return collection.stream().map(ekFunction).collect(Collectors.toList());
+        return collection.stream()
+                .map(ekFunction)
+                .collect(Collectors.toList());
     }
 
     public static <K, E> Set<K> convert2Set(Collection<E> collection, Function<E, K> ekFunction) {

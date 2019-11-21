@@ -10,6 +10,7 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
@@ -30,6 +31,18 @@ public class StreamUtilsTest {
 
         // The old writing
         List<Integer> oldNumbers = numbers.stream().map(x -> x + 1).collect(Collectors.toList());
+        System.out.println(oldNumbers);
+    }
+
+    @Test
+    public void testConvert2Set(){
+        ArrayList<Integer> numbers = Lists.newArrayList(1, 2, 3);
+        // The new writing
+        Set<Integer> newNumbers = StreamUtils.convert2Set(numbers, x -> x + 1);
+        System.out.println(newNumbers);
+
+        // The old writing
+        Set<Integer> oldNumbers = numbers.stream().map(x -> x + 1).collect(Collectors.toSet());
         System.out.println(oldNumbers);
     }
 }
